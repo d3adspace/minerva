@@ -27,16 +27,27 @@ import de.d3adspace.minerva.property.EntityProperty;
 import org.json.JSONObject;
 
 /**
+ * Basic converter for minerva.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class SimpleEntityConverter<EntityType> implements EntityConverter<EntityType> {
 	
+	/**
+	 * Meta data store.
+	 */
 	private final EntityMetaContainer metaContainer;
 	
+	/**
+	 * Create a new converter based on a meta container.
+	 *
+	 * @param metaContainer The meta container.
+	 */
 	SimpleEntityConverter(EntityMetaContainer metaContainer) {
 		this.metaContainer = metaContainer;
 	}
 	
+	@Override
 	public EntityType toEntity(JSONObject jsonObject, Class<EntityType> entityClazz) {
 		EntityMeta entityMeta = this.getEntityMeta(entityClazz);
 		
@@ -59,6 +70,7 @@ public class SimpleEntityConverter<EntityType> implements EntityConverter<Entity
 		return null;
 	}
 	
+	@Override
 	public JSONObject fromEntity(EntityType entity) {
 		EntityMeta entityMeta = this.getEntityMeta(entity.getClass());
 		
@@ -80,6 +92,19 @@ public class SimpleEntityConverter<EntityType> implements EntityConverter<Entity
 		return jsonObject;
 	}
 	
+	@Override
+	public void map(Class<?>... entityClazzes) {
+		for (Class<?> entityClazz : entityClazzes) {
+			this.getEntityMeta(entityClazz);
+		}
+	}
+	
+	/**
+	 * Retrieve meta of on entity.
+	 *
+	 * @param entityClazz The class of the entity.
+	 * @return The meta.
+	 */
 	private EntityMeta getEntityMeta(Class<?> entityClazz) {
 		EntityMeta entityMeta = this.metaContainer.getEntityMeta(entityClazz);
 		

@@ -21,6 +21,8 @@
 package de.d3adspace.minerva.metadata;
 
 /**
+ * Factory for new entity meta.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class EntityMetaFactory {

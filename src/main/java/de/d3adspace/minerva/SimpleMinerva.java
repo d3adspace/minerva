@@ -28,8 +28,16 @@ import org.json.JSONObject;
  */
 public class SimpleMinerva implements Minerva {
 	
+	/**
+	 * The underlying converter
+	 */
 	private final EntityConverter converter;
 	
+	/**
+	 * Create a new minerva instance with the given converter
+	 *
+	 * @param converter The converter.
+	 */
 	SimpleMinerva(EntityConverter converter) {
 		this.converter = converter;
 	}
@@ -42,5 +50,10 @@ public class SimpleMinerva implements Minerva {
 	@Override
 	public <EntityType> JSONObject fromEntity(EntityType entity) {
 		return this.converter.fromEntity(entity);
+	}
+	
+	@Override
+	public void map(Class<?>... entityClazzes) {
+		this.converter.map(entityClazzes);
 	}
 }

@@ -24,24 +24,49 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * Simple container for stored meta data.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class EntityMetaContainer {
 	
+	/**
+	 * The underlying Map.
+	 */
 	private final Map<Class<?>, EntityMeta> metadata;
 	
+	/**
+	 * Create a new container based on a list of metadata.
+	 *
+	 * @param metadata The metadata.
+	 */
 	public EntityMetaContainer(Map<Class<?>, EntityMeta> metadata) {
 		this.metadata = metadata;
 	}
 	
+	/**
+	 * Create an empty container.
+	 */
 	public EntityMetaContainer() {
 		this(new ConcurrentHashMap<>());
 	}
 	
+	/**
+	 * Retrieve meta of a class
+	 *
+	 * @param entityClazz The class.
+	 * @return The meta.
+	 */
 	public EntityMeta getEntityMeta(Class<?> entityClazz) {
 		return this.metadata.get(entityClazz);
 	}
 	
+	/**
+	 * Register new meta data.
+	 *
+	 * @param entityClazz The class.
+	 * @param entityMeta The meta.
+	 */
 	public void addEntityMeta(Class<?> entityClazz, EntityMeta entityMeta) {
 		this.metadata.put(entityClazz, entityMeta);
 	}

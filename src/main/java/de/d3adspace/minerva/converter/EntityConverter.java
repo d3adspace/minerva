@@ -23,11 +23,35 @@ package de.d3adspace.minerva.converter;
 import org.json.JSONObject;
 
 /**
+ * Convert entities.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public interface EntityConverter<EntityType> {
 	
+	/**
+	 * Deserialize an entity from json.
+	 *
+	 * @param jsonObject The jsonobject.
+	 * @param entityClazz The Class of the entity.
+	 *
+	 * @return The entity.
+	 */
 	EntityType toEntity(JSONObject jsonObject, Class<EntityType> entityClazz);
 	
-	JSONObject fromEntity(EntityType entityType);
+	/**
+	 * Serialize an entity to json.
+	 *
+	 * @param entity The entity.
+	 *
+	 * @return The jsonobject.
+	 */
+	JSONObject fromEntity(EntityType entity);
+	
+	/**
+	 * Map classes to prevent meta creation at serialization runtime.
+	 *
+	 * @param entityClazzes The classes of the entities.
+	 */
+	void map(Class<?>... entityClazzes);
 }

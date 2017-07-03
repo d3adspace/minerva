@@ -23,10 +23,17 @@ package de.d3adspace.minerva.converter;
 import de.d3adspace.minerva.metadata.EntityMetaContainer;
 
 /**
+ * Factory for the entity converter instances.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class EntityConverterFactory {
 	
+	/**
+	 * Create a new entity converter.
+	 *
+	 * @return The converter.
+	 */
 	public static EntityConverter createEntityConverter() {
 		EntityMetaContainer metaContainer = new EntityMetaContainer();
 		

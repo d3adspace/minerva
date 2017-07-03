@@ -23,10 +23,19 @@ package de.d3adspace.minerva.property;
 import java.lang.reflect.Field;
 
 /**
+ * Factory for all entity properties.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class EntityPropertyFactory {
 	
+	/**
+	 * Create a new property.
+	 *
+	 * @param field The field.
+	 *
+	 * @return The property.
+	 */
 	public static EntityProperty createEntityProperty(Field field) {
 		return new ReflectedEntityProperty(field);
 	}

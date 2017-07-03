@@ -24,9 +24,16 @@ import de.d3adspace.minerva.property.EntityProperty;
 import java.util.List;
 
 /**
+ * Basic Entity meta interface.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public interface EntityMeta {
 	
+	/**
+	 * Get all properties of an entity.
+	 *
+	 * @return The entity properties.
+	 */
 	List<EntityProperty> getEntityProperties();
 }

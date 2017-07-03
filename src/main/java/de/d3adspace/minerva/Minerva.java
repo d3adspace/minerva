@@ -23,11 +23,36 @@ package de.d3adspace.minerva;
 import org.json.JSONObject;
 
 /**
+ * Basic interface for all minerva distributions.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public interface Minerva {
 	
+	/**
+	 * Deserialize an entity from json.
+	 *
+	 * @param jsonObject The jsonobject.
+	 * @param entityClazz The Class of the entity.
+	 * @param <EntityType> The type of the entity.
+	 *
+	 * @return The entity.
+	 */
 	<EntityType> EntityType toEntity(JSONObject jsonObject, Class<EntityType> entityClazz);
 	
+	/**
+	 * Serialize an entity to json.
+	 *
+	 * @param entity The entity.
+	 * @param <EntityType> The type of the entity.
+	 * @return The jsonobject.
+	 */
 	<EntityType> JSONObject fromEntity(EntityType entity);
+	
+	/**
+	 * Map classes to prevent meta creation at serialization runtime.
+	 *
+	 * @param entityClazzes The classes of the entities.
+	 */
+	void map(Class<?>... entityClazzes);
 }

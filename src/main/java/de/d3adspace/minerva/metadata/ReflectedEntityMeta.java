@@ -27,12 +27,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * EntityMeta implementation based on reflections.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class ReflectedEntityMeta implements EntityMeta {
 	
+	/**
+	 * List of all known properties.
+	 */
 	private final List<EntityProperty> entityProperties;
 	
+	/**
+	 * Create meta by a class.
+	 *
+	 * @param entityClazz The class.
+	 */
 	ReflectedEntityMeta(Class<?> entityClazz) {
 		this.entityProperties = new ArrayList<>();
 		

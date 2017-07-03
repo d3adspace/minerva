@@ -24,10 +24,17 @@ import de.d3adspace.minerva.converter.EntityConverter;
 import de.d3adspace.minerva.converter.EntityConverterFactory;
 
 /**
+ * Factory for all minerva instances.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class MinervaFactory {
 	
+	/**
+	 * Create a new minerva instance.
+	 *
+	 * @return The minerva instance.
+	 */
 	public static Minerva createMinerva() {
 		EntityConverter entityConverter = EntityConverterFactory.createEntityConverter();
 		

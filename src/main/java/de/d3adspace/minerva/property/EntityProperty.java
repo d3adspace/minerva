@@ -21,13 +21,34 @@
 package de.d3adspace.minerva.property;
 
 /**
+ * Basic property interface for all entity properties.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public interface EntityProperty {
 	
+	/**
+	 * Get name of the field reference.
+	 *
+	 * @return The field name.
+	 */
 	String getFieldName();
 	
+	/**
+	 * Set the property to a given entity.
+	 *
+	 * @param object The value.
+	 * @param entity The entity.
+	 * @param <EntityType> The type of the entity.
+	 */
 	<EntityType> void set(Object object, EntityType entity);
 	
+	/**
+	 * Get the property from an entity.
+	 *
+	 * @param entity The entity.
+	 * @param <EntityType> The type of the entity.
+	 * @return The value.
+	 */
 	<EntityType> Object get(EntityType entity);
 }

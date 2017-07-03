@@ -23,13 +23,27 @@ package de.d3adspace.minerva.property;
 import java.lang.reflect.Field;
 
 /**
+ * Reflection based property.
+ *
  * @author Felix 'SasukeKawaii' Klauke
  */
 public class ReflectedEntityProperty implements EntityProperty {
 	
+	/**
+	 * The underlying field reference.
+	 */
 	private final Field field;
+	
+	/**
+	 * The name of the field.
+	 */
 	private final String fieldName;
 	
+	/**
+	 * Create a new property based on a field.
+	 *
+	 * @param field The field.
+	 */
 	ReflectedEntityProperty(Field field) {
 		this.field = field;
 		this.field.setAccessible(true);
