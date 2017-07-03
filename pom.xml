@@ -59,6 +59,7 @@
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>
       <version>20170516</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 </project>
