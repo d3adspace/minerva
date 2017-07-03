@@ -99,3 +99,8 @@ _Deserialize:_
 ```java
 MinervaUser minervaUser = minerva.toEntity(jsonObject, MinervaUser.class);
 ```
+
+_Preload entity meta to reduce load at serilization:_
+```java
+minerva.map(MinervaUser.class);
+```
