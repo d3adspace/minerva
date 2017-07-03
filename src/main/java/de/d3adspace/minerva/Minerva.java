@@ -27,7 +27,6 @@ import org.json.JSONObject;
  */
 public interface Minerva {
 	
-	
 	<EntityType> EntityType toEntity(JSONObject jsonObject, Class<EntityType> entityClazz);
 	
 	<EntityType> JSONObject fromEntity(EntityType entity);
