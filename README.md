@@ -87,6 +87,14 @@ MinervaUser minervaUser = new MinervaUser("Minerva", 1);
 JSONObject jsonObject = minerva.fromEntity(minervaUser);
 ```
 
+_Result:_
+```json
+{
+    "name":"Minerva"
+    "age":1
+}
+```
+
 _Deserialize:_
 ```java
 MinervaUser minervaUser = minerva.toEntity(jsonObject, MinervaUser.class);
