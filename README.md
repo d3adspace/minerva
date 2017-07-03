@@ -88,10 +88,10 @@ JSONObject jsonObject = minerva.fromEntity(minervaUser);
 ```
 
 _Result:_
-```json
+```
 {
-    "name":"Minerva"
-    "age":1
+    "name": "Minerva"
+    "age": 1
 }
 ```
 
